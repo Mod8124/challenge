@@ -1,8 +1,8 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../helpers/colors';
 
 export const FormStyle = styled.form`
-  width: 100%;
+  width: 96%;
   max-width: 600px;
   margin: 0 auto;
 

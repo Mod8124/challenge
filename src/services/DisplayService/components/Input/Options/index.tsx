@@ -37,7 +37,7 @@ export const Options: FC<IOptions> = ({
   };
 
   return (
-    <ContainerOptionsStyle erroractive={error !== ''} placeholder={optionValue} {...register(name)}>
+    <ContainerOptionsStyle $erroractive={error} placeholder={optionValue} {...register(name)}>
       <p>{optionValue}</p>
 
       {activeOptions && (

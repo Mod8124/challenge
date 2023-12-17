@@ -69,7 +69,7 @@ export const Input: FC<Iinput> = ({
             placeholder={placeholder}
             autoComplete={autoComplete}
             defaultValue={Auth[name]}
-            erroractive={error !== ''}
+            $erroractive={error}
           />
         )}
         <Icon name={name} activeOptions={activeOptions} handleToggle={handleToggle} />

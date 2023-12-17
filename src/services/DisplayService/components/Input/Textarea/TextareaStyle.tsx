@@ -1,8 +1,8 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../../helpers/colors';
 
 interface Ierror {
-  erroractive: boolean;
+  $erroractive: string;
 }
 
 export const TextareaStyle = styled.textarea<Ierror>`
@@ -13,7 +13,8 @@ export const TextareaStyle = styled.textarea<Ierror>`
   top: 5px;
   padding-left: 2%;
   padding-top: 2.2%;
-  border: 1px solid ${({ erroractive }) => (erroractive ? colors.alert.error : colors.neutral[500])};
+  border: 1px solid
+    ${({ $erroractive }) => ($erroractive ? colors.alert.error : colors.neutral[500])};
   outline: none;
   resize: none;
   transition: height 0.5s;

@@ -18,7 +18,7 @@ export const ShowStep: FC = () => {
       <ArticleContainerStyle>
         {iconsSteps.map((step, index) => (
           <ContainerStepStyle key={index}>
-            <IconStyle location={location} name={step.url}>
+            <IconStyle $location={location} name={step.url}>
               {step.icon}
             </IconStyle>
             <p>{step.name}</p>

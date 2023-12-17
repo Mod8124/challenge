@@ -10,7 +10,7 @@ export const getData = () => {
         if (data) dispatch(setData(data));
       }, 1000); // simulate a time request
     } catch (err: any) {
-      dispatch(setErrors(err?.message)); // Set errors from the API response
+      dispatch(setErrors(err)); // Set errors from the API response
     } finally {
       dispatch(setIsLoading()); // Set isLoading to false
     }

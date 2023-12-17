@@ -18,7 +18,7 @@ export const Textarea: FC<Itextarea> = ({ placeholder, register, error, name, de
       defaultValue={defaultValue}
       placeholder={placeholder}
       {...register(name)}
-      erroractive={error !== ''}
+      $erroractive={error}
     ></TextareaStyle>
   );
 };

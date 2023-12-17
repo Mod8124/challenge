@@ -1,8 +1,8 @@
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../../helpers/colors';
 
 interface Ierror {
-  erroractive: boolean;
+  $erroractive: string;
   placeholder: string;
 }
 
@@ -13,7 +13,8 @@ export const ContainerOptionsStyle = styled.div<Ierror>`
   left: 0;
   top: 5px;
   padding-left: 2%;
-  border: 1px solid ${({ erroractive }) => (erroractive ? colors.alert.error : colors.neutral[500])};
+  border: 1px solid
+    ${({ $erroractive }) => ($erroractive !== '' ? colors.alert.error : colors.neutral[500])};
   outline: none;
   text-align: start;
   font-size: 0.6em;

@@ -2,13 +2,16 @@ import styled from 'styled-components';
 import { colors } from '../../helpers/colors';
 
 interface IIcon {
-  location: string;
+  $location: string;
   name: string;
 }
 
 export const ShowStepStyle = styled.header`
   padding-bottom: 2em;
   position: relative;
+  max-width: 478px;
+  width: 96%;
+  overflow: hidden;
 `;
 
 export const LineStyle = styled.div`
@@ -23,10 +26,14 @@ export const LineStyle = styled.div`
 export const ArticleContainerStyle = styled.article`
   display: flex;
   width: 100%;
-  column-gap: 6em;
+  column-gap: 3em;
   justify-content: space-between;
   position: relative;
   z-index: 2;
+
+  @media (min-width: 768px) {
+    column-gap: 6em;
+  }
 `;
 
 export const ContainerStepStyle = styled.div`
@@ -43,7 +50,7 @@ export const ContainerStepStyle = styled.div`
 `;
 
 export const IconStyle = styled.div<IIcon>`
-  color: ${(props) => (props.location === props.name ? colors.primary[700] : colors.primary[300])};
+  color: ${(props) => (props.$location === props.name ? colors.primary[700] : colors.primary[300])};
   width: 30px;
   height: 30px;
   background: white;
