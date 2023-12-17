@@ -5,9 +5,9 @@ export const WrapStyle = styled.main`
   height: 100vh;
   font-size: 1.5em;
   text-align: center;
-  background: #081229;
-  display: grid;
-  grid-template-columns: 35% auto;
-  grid-template-rows: 100%;
   overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;

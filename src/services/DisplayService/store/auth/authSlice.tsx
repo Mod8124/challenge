@@ -1,36 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Iauth } from './authInterface';
 
-// const checkUser =
-//   sessionStorage.getItem('user') !== null ? JSON.parse(sessionStorage.getItem('user')) : null;
-
-const base: Iauth = {
-  //   user: checkUser,
+const userBase: Iauth = {
   firstName: '',
   lastName: '',
   email: '',
   address1: '',
-  address2: [
-    {
-      city: '',
-      state: '',
-      zip: '',
-    },
-  ],
+  address2: '',
+  city: '',
+  state: '',
+  zip: '',
   phone: '',
   jobTitle: '',
   reason: '',
+  thanks: false,
 };
+
+const userFromSessionStorage = sessionStorage.getItem('user');
+
+const checkUser = userFromSessionStorage !== null ? JSON.parse(userFromSessionStorage) : userBase;
 
 export const authSlice = createSlice({
   name: 'authSlice',
-  initialState: base,
+  initialState: checkUser,
   reducers: {
-    setStates: (state, action) => {
-      return {
-        ...state,
-        ...action.payload,
-      };
+    setStates: (state, action: PayloadAction<Iauth>) => {
+      const data = { ...state, ...action.payload };
+      const userString = JSON.stringify(data);
+      sessionStorage.setItem('user', userString);
+      return data;
     },
   },
 });

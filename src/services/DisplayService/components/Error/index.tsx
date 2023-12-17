@@ -1,13 +1,10 @@
 import { FC } from 'react';
+import { ErrorStyle } from './ErrorStyle';
 
 interface Ierror {
-  children;
+  error: any;
 }
 
-export const Error: FC<Ierror> = ({ children }) => {
-  return (
-    <p data-testid='error' className='w-full text-alert-error min-h-[20px] py-1 text-start'>
-      {children}
-    </p>
-  );
+export const Error: FC<Ierror> = ({ error }) => {
+  return <ErrorStyle data-testid='error'>{error}</ErrorStyle>;
 };

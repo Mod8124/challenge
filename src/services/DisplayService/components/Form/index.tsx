@@ -1,9 +1,19 @@
-export const Form = ({ children, handleSubmit, onSubmit, title, paragraph }) => {
+import { FC } from 'react';
+import { FormStyle } from './form.style';
+import { UseFormHandleSubmit, SubmitHandler } from 'react-hook-form';
+import { IForm } from '../../validations/interface.validations';
+interface Iform {
+  children: React.ReactNode;
+  handleSubmit: UseFormHandleSubmit<IForm>;
+  onSubmit: SubmitHandler<IForm>;
+  title: string;
+}
+
+export const Form: FC<Iform> = ({ children, title, handleSubmit, onSubmit }) => {
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <FormStyle onSubmit={handleSubmit(onSubmit)}>
       <h1>{title}</h1>
-      <p>{paragraph}</p>
       {children}
-    </form>
+    </FormStyle>
   );
 };

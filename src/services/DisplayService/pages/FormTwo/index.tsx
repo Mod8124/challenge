@@ -1,15 +1,13 @@
 import { FC } from 'react';
-import { Wrap } from '../../components/Wrap';
-import { WrapImage } from '../../components/WrapImage';
+import { WrapForm } from '../../../DisplayService/components/WrapForm';
+import { WithLoader } from '../../components/WithLoader';
+import { FormTwoHandleLogic } from './FormTwoHandleLogic';
 
 const FormTwoPage: FC = () => {
   return (
-    <Wrap>
-      <WrapImage image='form3' />
-      <section>
-        <h1>form2</h1>
-      </section>
-    </Wrap>
+    <WrapForm>
+      <WithLoader HandleFormLogic={FormTwoHandleLogic} />
+    </WrapForm>
   );
 };
 

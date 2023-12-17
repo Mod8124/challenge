@@ -1,15 +1,13 @@
 import { FC } from 'react';
-import { Wrap } from '../../components/Wrap';
-import { WrapImage } from '../../components/WrapImage';
+import { WrapForm } from '../../../DisplayService/components/WrapForm';
+import { WithLoader } from '../../components/WithLoader';
+import { FormHandleLogic } from './FormHandleLogic';
 
 const FormPage: FC = () => {
   return (
-    <Wrap>
-      <WrapImage image='form' />
-      <section>
-        <h1>form1</h1>
-      </section>
-    </Wrap>
+    <WrapForm>
+      <WithLoader HandleFormLogic={FormHandleLogic} />
+    </WrapForm>
   );
 };
 
