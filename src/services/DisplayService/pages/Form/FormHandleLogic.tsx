@@ -15,8 +15,6 @@ export const FormHandleLogic = () => {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
-    setValue,
   } = useForm<IformOneValidations>({
     resolver: yupResolver(formOneValidations),
   });
@@ -30,8 +28,6 @@ export const FormHandleLogic = () => {
     register,
     handleSubmit,
     errors,
-    getValues,
     onSubmit,
-    setValue,
   };
 };

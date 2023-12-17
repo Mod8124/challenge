@@ -6,5 +6,5 @@ interface Ierror {
 }
 
 export const Error: FC<Ierror> = ({ error }) => {
-  return <ErrorStyle data-testid='error'>{error}</ErrorStyle>;
+  return <ErrorStyle>{error}</ErrorStyle>;
 };

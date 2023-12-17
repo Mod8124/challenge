@@ -1,23 +1,24 @@
-import { useDataStore } from '../../hooks/useData';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FC } from 'react';
-import { WithLoaderStyled } from './WithLoader.style';
 import { HandleForm } from '../HandleForm/';
+import { useDataStore } from '../../hooks/useData';
+import { WithLoaderStyled } from './WithLoader.style';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 import {
   UseFormRegister,
   FieldErrors,
   FieldValues,
   UseFormHandleSubmit,
-  UseFormGetValues,
+  UseFormSetValue,
+  SubmitHandler,
 } from 'react-hook-form';
 
 interface HandleFormLogic<T extends FieldValues> {
   register: UseFormRegister<T>;
   handleSubmit: UseFormHandleSubmit<T>;
   errors: FieldErrors<T>;
-  getValues: UseFormGetValues<T>;
-  onSubmit: (data: T) => void; // Update the data type to match T
+  setValue?: UseFormSetValue<T>;
+  onSubmit: SubmitHandler<T>;
 }
 
 interface IHandleForm<T extends FieldValues> {
@@ -30,7 +31,6 @@ export const WithLoader: FC<IHandleForm<any>> = ({ HandleFormLogic }) => {
   if (isLoading) {
     return (
       <WithLoaderStyled>
-        <h2>cargando</h2>
         <AiOutlineLoading3Quarters />
       </WithLoaderStyled>
     );

@@ -6,5 +6,5 @@ interface Ioption {
 }
 
 export const Option: FC<Ioption> = ({ name }) => {
-  return <OptionStyle>{name}</OptionStyle>;
+  return <OptionStyle type='button'>{name}</OptionStyle>;
 };

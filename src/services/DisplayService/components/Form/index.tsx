@@ -11,7 +11,7 @@ interface Iform {
 
 export const Form: FC<Iform> = ({ children, title, handleSubmit, onSubmit }) => {
   return (
-    <FormStyle onSubmit={handleSubmit(onSubmit)}>
+    <FormStyle onSubmit={handleSubmit(onSubmit)} data-testid='async-component'>
       <h1>{title}</h1>
       {children}
     </FormStyle>

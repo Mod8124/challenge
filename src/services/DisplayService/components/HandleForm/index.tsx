@@ -10,17 +10,16 @@ import {
   FieldErrors,
   FieldValues,
   UseFormHandleSubmit,
-  UseFormGetValues,
   UseFormSetValue,
+  SubmitHandler,
 } from 'react-hook-form';
 
 interface HandleFormLogic<T extends FieldValues> {
   register: UseFormRegister<T>;
   handleSubmit: UseFormHandleSubmit<T>;
   errors: FieldErrors<T>;
-  getValues: UseFormGetValues<T>;
-  setValue: UseFormSetValue<T>;
-  onSubmit: (data: T) => void; // Update the data type to match T
+  setValue?: UseFormSetValue<T>;
+  onSubmit: SubmitHandler<T>;
 }
 
 interface IHandleForm<T extends FieldValues> {

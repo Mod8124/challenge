@@ -14,7 +14,6 @@ export const FormThreeHandleLogic = () => {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
     setValue,
   } = useForm<IformThreeValidations>({
     resolver: yupResolver(formThreeValidations),
@@ -29,7 +28,6 @@ export const FormThreeHandleLogic = () => {
     register,
     handleSubmit,
     errors,
-    getValues,
     onSubmit,
     setValue,
   };

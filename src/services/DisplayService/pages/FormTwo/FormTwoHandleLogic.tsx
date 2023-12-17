@@ -15,7 +15,6 @@ export const FormTwoHandleLogic = () => {
     register,
     handleSubmit,
     formState: { errors },
-    getValues,
   } = useForm<IformTwoValidations>({
     resolver: yupResolver(formTwoValidations),
   });
@@ -29,7 +28,6 @@ export const FormTwoHandleLogic = () => {
     register,
     handleSubmit,
     errors,
-    getValues,
     onSubmit,
   };
 };
